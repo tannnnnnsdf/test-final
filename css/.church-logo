@@ -47,7 +47,7 @@
     }
 
     .church-logo {
-      width: auto;
+      width: 100;
       height: 300px;
       filter: brightness(0) invert(1);
       object-fit: contain;
@@ -127,7 +127,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
