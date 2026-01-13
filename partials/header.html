@@ -1,67 +1,58 @@
 <header class="site-header">
-  <div class="header-top-border"></div>
-  <div class="header-content">
-    <div class="logo-container">
-      <a href="https://tannnnnnsdf.github.io/JDM/index">
-        <img src="https://tannnnnnsdf.github.io/JDM/images/favicon.svg" alt="โลโก้คริสตจักร" class="church-logo" onerror="this.style.display='none';">
-      </a>
+   <div class="header-top-border"></div>
+   <div class="header-content">
+    <div class="logo-container"><img src="https://tannnnnnsdf.github.io/JDM/images/favicon.svg" alt="โลโก้คริสตจักร" class="church-logo" onerror="this.style.display='none';">
     </div>
     <div class="header-text">
-      <div class="ornament">✦ ───── ✦ ───── ✦</div>
-      <h1 class="church-name">คริสตจักรสาวกพระเยซูกรุงเทพ</h1>
-      <p class="church-name-en">JESUS DISCIPLE MOVEMENT BANGKOK CHURCH</p>
-      <p class="church-tagline">"เพราะฉะนั้น ท่านทั้งหลายจงออกไปและนำชนทุกชาติมาเป็นสาวกของเรา"</p>
-      <p class="church-tagline">มัทธิว 28:19-20</p>
-      <div class="ornament">✦ ───── ✦ ───── ✦</div>
+     <div class="ornament">
+      ✦ ───── ✦ ───── ✦
+     </div>
+     <h1 id="church-name" class="church-name">คริสตจักรสาวกพระเยซู</h1>
+     <p class="church-name-en">JESUS DISCIPLE MOVEMENT BANGKOK CHURCH</p>
+     <p id="tagline" class="church-tagline">"เพราะพระเจ้าทรงรักโลก..."</p>
+     <div class="ornament">
+      ✦ ───── ✦ ───── ✦
+     </div>
     </div>
-  </div>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="เปิดเมนู">☰</button>
-      <ul id="main-nav" class="nav-list">
-        <li class="nav-item"><a href="https://tannnnnnsdf.github.io/JDM/index" class="nav-link">หน้าแรก | Home</a></li>
-        <li class="nav-item"><a href="https://jdmbangkok.com/sermon/" class="nav-link">คำเทศนา | Sermon</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ข่าวสารและกิจกรรม | News</a>
-          <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/news-and-events/christian-news/" class="dropdown-link">ข่าวสารและกิจกรรม</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/news-and-events/pray"            class="dropdown-link">หัวข้อฝากอธิษฐาน</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ข้อมูลคริสตจักร | About</a>
-          <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/history-jdmbangkok/"  class="dropdown-link">ประวัติคริสตจักร</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#vision"              class="dropdown-link">นิมิตและพันธกิจ</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#doctrine"            class="dropdown-link">เป้าหมาย JDMBKK2026</a></li>
-            <li class="dropdown-item"><a href="https://tannnnnnsdf.github.io/JDM/about/personnel"                 class="dropdown-link">บุคลากร</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">กลุ่มเซลล์ | CellGroup</a>
-          <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/thummawut-leader/"  class="dropdown-link">1. ผู้นำ อาจารย์ธรรมวุฒิ</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-ning-leader/"   class="dropdown-link">2. ผู้นำ คุณหนิง</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-nooi-leader/"   class="dropdown-link">3. ผู้นำ คุณนุ้ย</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-ling-leader/"   class="dropdown-link">4. ผู้นำ คุณหลิง</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-mind-leader/"   class="dropdown-link">5. ผู้นำ คุณมายด์</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-war-leader/"    class="dropdown-link">6. ผู้นำ คุณวอร์</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-thummawut/"     class="dropdown-link">7. GBS อาจารย์ธรรมวุฒิ</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-lee/"           class="dropdown-link">8. GBS อาจารย์ลี</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-ked/"           class="dropdown-link">9. GBS อาจารย์เกด</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/ravee-study-group/" class="dropdown-link">10. กลุ่มระวีศึกษา</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/team-prayer-group/" class="dropdown-link">11. กลุ่มทีมนมัสการ</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a href="https://tannnnnnsdf.github.io/JDM/give" class="nav-link">ถวายทรัพย์ | Give</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ติดต่อเรา | Contact</a>
-          <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/...."       class="dropdown-link">ข้อมูลการติดต่อ</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/....."      class="dropdown-link">ส่งข้อความถึงเรา</a></li>
-            <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/......"     class="dropdown-link">ฝากให้เราอธิษฐานเผื่อ</a></li>
-          </ul>
-        </li>
+   </div>
+   <nav class="main-nav">
+    <div class="container"><button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="เปิดเมนู">☰</button>
+     <ul id="main-nav" class="nav-list">
+      <li class="nav-item"><a href="https://tannnnnnsdf.github.io/JDM/index" class="nav-link">หน้าแรก | Home</a></li>
+      <li class="nav-item"><a href="https://jdmbangkok.com/sermon/" class="nav-link">คำเทศนา | Sermon</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ข่าวสารและกิจกรรม | News</a> <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
+       <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/news-and-events/christian-news/" class="dropdown-link">ข่าวสารและกิจกรรม</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/news-and-events/pray" class="dropdown-link">หัวข้อฝากอธิษฐาน</a></li>
+       </ul></li>
+      <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ข้อมูลคริสตจักร | About</a> <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
+       <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/history-jdmbangkok/" class="dropdown-link">ประวัติคริสตจักร</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#vision" class="dropdown-link">นิมิตและพันธกิจ</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#doctrine" class="dropdown-link">เป้าหมาย JDMBKK2026</a></li>
+        <li class="dropdown-item"><a href="https://tannnnnnsdf.github.io/JDM/about/personnel" class="dropdown-link">บุคลากร</a></li>
+       </ul></li>
+      <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">กลุ่มเซลล์ | CellGroup</a> <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
+       <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/thummawut-leader/" class="dropdown-link">1. ผู้นำ อาจารย์ธรรมวุฒิ</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-ning-leader/" class="dropdown-link">2. ผู้นำ คุณหนิง</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-nooi-leader/" class="dropdown-link">3. ผู้นำ คุณนุ้ย</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-ling-leader/" class="dropdown-link">4. ผู้นำ คุณหลิง</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-mind-leader/" class="dropdown-link">5. ผู้นำ คุณมายด์</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/kun-war-leader/" class="dropdown-link">6. ผู้นำ คุณวอร์</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-thummawut/" class="dropdown-link">7. GBS อาจารย์ธรรมวุฒิ</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-lee/" class="dropdown-link">8. GBS อาจารย์ลี</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/gbs-ked/" class="dropdown-link">9. GBS อาจารย์เกด</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/ravee-study-group/" class="dropdown-link">10. กลุ่มระวีศึกษา</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/CellGroup/team-prayer-group/" class="dropdown-link">11. กลุ่มทีมนมัสการ</a></li>
+       </ul></li>
+      <li class="nav-item"><a href="https://tannnnnnsdf.github.io/JDM/give" class="nav-link">ถวายทรัพย์ | Give</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="toggleDropdown(event)">ติดต่อเรา | Contact</a> <button class="dropdown-toggle" onclick="toggleDropdown(event)" aria-label="เปิดเมนูย่อย"></button>
+       <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/history-jdmbangkok/" class="dropdown-link">ข้อมูลการติดต่อ</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#vision" class="dropdown-link">ส่งข้อความถึงเรา</a></li>
+        <li class="dropdown-item"><a href="https://jdmbangkok.com/home/about-jdmbangkok/#doctrine" class="dropdown-link">ฝากให้เราอธิษฐานเผื่อ</a></li>
+       </ul></li>
      </ul>
     </div>
    </nav>
