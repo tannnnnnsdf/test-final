@@ -296,15 +296,18 @@
 
     /* Main Content (Hidden Initially) */
     .main-content {
-      display: none;
       width: 100%;
       min-height: 100%;
       background: linear-gradient(135deg, #fef3f8 0%, #e8f4fd 100%);
+     opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
     }
 
     .main-content.show {
-      display: block;
       animation: fadeIn 1s ease-out;
+     opacity: 1;
+  pointer-events: auto;
     }
 
     @keyframes fadeIn {
@@ -643,20 +646,18 @@
 <script src="js/smooth.js"></script>
 <script src="js/sdk.js"></script>
 <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var loadingScreen = document.getElementById('loading-screen');
-        var mainContent = document.getElementById('main-content');
-        
-        loadingScreen.classList.add('fade-out');
-        
-        setTimeout(function() {
-          loadingScreen.style.display = 'none';
-          mainContent.classList.add('show');
-          document.body.style.overflow = 'auto';
-        }, 3000);
-      }, 3000); // Show loading for 3 seconds
-    });
+    window.addEventListener('load', () => {
+  const loader = document.getElementById('loading-screen');
+  const main = document.getElementById('main-content');
+
+  loader.classList.add('fade-out');
+
+  setTimeout(() => {
+    loader.remove();
+    main.classList.add('show');
+    document.body.style.overflow = 'auto';
+  }, 1000);
+});
   </script>
  </body>
 </html>
