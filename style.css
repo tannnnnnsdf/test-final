@@ -47,7 +47,7 @@
     }
 
     .church-logo {
-      width: 100;
+      width: auto;
       height: 300px;
       filter: brightness(0) invert(1);
       object-fit: contain;
