@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเราและฝากคำอธิษฐาน | คริสตจักรสาวกพระเยซูกรุงเทพ</title>
+    
+    <style>
+        .contact-page { max-width: 1100px; margin: 40px auto; padding: 0 20px; font-family: 'Prompt', sans-serif; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 30px; }
+        
+        /* ฝั่งข้อมูลติดต่อ */
+        .contact-info-box { background: var(--bg-alt); padding: 40px; border-radius: 20px; border-left: 6px solid var(--primary-color); }
+        .contact-info-box h2 { color: var(--text-main); margin-bottom: 25px; }
+        .info-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+        .info-item i { font-size: 1.5rem; color: var(--primary-color); }
+        .info-item h4 { margin: 0 0 5px 0; color: var(--text-main); }
+        .info-item p, .info-item a { margin: 0; color: var(--text-muted); text-decoration: none; font-size: 1rem; }
+
+        /* ฝั่งฟอร์มคำอธิษฐาน */
+        .prayer-form-box { background: white; padding: 40px; border-radius: 20px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+        .prayer-form-box h3 { color: var(--primary-color); margin-bottom: 10px; }
+        .prayer-form-box p { color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-main); }
+        .form-group input, .form-group textarea { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; font-family: 'Prompt'; font-size: 1rem;
+        }
+        .form-group textarea { height: 150px; resize: vertical; }
+
+        .btn-send { 
+            width: 100%; padding: 15px; background: var(--primary-color); color: white; border: none; 
+            border-radius: 10px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
+        }
+        .btn-send:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+        /* แผนที่จำลอง */
+        .map-container { margin-top: 50px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); height: 400px; background: #eee; }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-info-box { order: 2; }
+            .prayer-form-box { order: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div data-include="header.html"></div>
+
+<main class="contact-page">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1 style="color: var(--text-main);">ติดต่อเรา</h1>
+        <p style="color: var(--text-muted);">ไม่ว่าคุณจะมีคำถามหรือต้องการคำอธิษฐานเผื่อ เราพร้อมรับฟังและยืนเคียงข้างคุณ</p>
+    </div>
+
+    <div class="contact-grid">
+        <!-- ข้อมูลการติดต่อ -->
+        <section class="contact-info-box">
+            <h2>ข้อมูลการติดต่อ</h2>
+            
+            <div class="info-item">
+                <div class="info-item-text">
+                    <h4>สถานที่นมัสการ</h4>
+                    <p>64 รามคำแหง 24 แยก 6 หัวหมาก บางกะปิ กรุงเทพมหานคร 10240</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-text">
+                    <h4>เบอร์โทรศัพท์</h4>
+                    <p><a href="tel:0925520263">092-552-0263</a> (ออฟฟิศคริสตจักร)</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-text">
+                    <h4>เวลาทำการ / เวลานมัสการ</h4>
+                    <p>วันอาทิตย์: 10:00 น. - 12:00 น.</p>
+                    <p>วันพุธ (อธิษฐาน): 19:00 น. - 20:30 น.</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-item-text">
+                    <h4>โซเชียลมีเดีย</h4>
+                    <p>Facebook: คริสตจักรสาวกพระเยซูกรุงเทพ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ฟอร์มส่งข้อความ/คำอธิษฐาน -->
+        <section class="prayer-form-box">
+            <h3>ส่งข้อความหรือคำอธิษฐาน</h3>
+            <p>เรายินดีอธิษฐานเผื่อคุณในทุกเรื่อง (ข้อมูลของคุณจะถูกเก็บเป็นความลับ)</p>
+            
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">ชื่อของคุณ (หรือนามแฝง)</label>
+                    <input type="text" id="name" placeholder="ระบุชื่อเพื่อให้เราเรียกคุณถูก">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">หัวข้อ</label>
+                    <input type="text" id="subject" placeholder="เช่น ขอคำอธิษฐาน, สอบถามเส้นทาง">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">ข้อความของคุณ / คำอธิษฐาน</label>
+                    <textarea id="message" placeholder="เขียนสิ่งที่คุณต้องการให้เราช่วยหรืออธิษฐานเผื่อได้ที่นี่..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-send">ส่งข้อมูลถึงคริสตจักร</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Google Maps (Placeholder) -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248029.5179358185!2d100.6181185!3d13.7510372!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29feeda177a3d%3A0x29cd0e3c709fd87b!2sJDM%20Bangkok%20Center!5e0!3m2!1sth!2sth!4v1769335062923!5m2!1sth!2sth" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</main>
+
+<div data-include="footer.html"></div>
+
+<script src="/inciude.js"></script>
+<script src="/header.js" defer></script>
+  <script src="/footer.js" defer></script>
+</body>
+</html>

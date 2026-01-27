@@ -1,0 +1,29 @@
+nav {
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-menu > li > a {
+  color: var(--text-main);
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+  color: var(--gold-1);
+}
+
+.dropdown-menu {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-float);
+}
+
+.dropdown-menu a {
+  color: var(--text-main);
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-hover);
+  color: var(--gold-1);
+}

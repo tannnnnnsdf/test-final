@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อ่านคำเทศนา | คริสตจักรสาวกพระเยซูกรุงเทพ</title>
+    <!-- เรียกใช้ไฟล์ CSS พื้นฐาน -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    
+    <style>
+        .read-wrapper {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        /* จัดการให้ iframe ที่โหลดมาขยายเต็มจอ (Responsive) */
+        .sermon-full-content iframe {
+            width: 100% !important;
+            aspect-ratio: 16 / 9; /* อัตราส่วนวิดีโอมาตรฐาน */
+            height: auto !important;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 30px;
+            border: none;
+        }
+
+        .sermon-full-content {
+            line-height: 2;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .loading-spinner {
+            text-align: center;
+            padding: 100px 0;
+            color: var(--text-muted);
+        }
+
+        .back-nav {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .back-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .back-nav a:hover {
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Include Header -->
+    <div data-include="components/header.html"></div>
+
+    <main class="read-wrapper">
+        <!-- พื้นที่แสดงเนื้อหาจากไฟล์รายสัปดาห์ -->
+        <article id="sermon-full-content" class="sermon-full-content">
+            <div class="loading-spinner">กำลังโหลดเนื้อหาพระวจนะ...</div>
+        </article>
+
+        <!-- ปุ่มย้อนกลับ -->
+        <div class="back-nav">
+            <a href="/sermon/sermon.html">← กลับไปหน้ารวมคำเทศนา</a>
+        </div>
+    </main>
+
+    <!-- ✅ Include Footer -->
+    <div data-include="components/footer.html"></div>
+
+    <!-- ✅ สคริปต์ควบคุมการทำงาน -->
+    <script src="js/header-logic.js"></script>
+    <script src="/inciude.js"></script>
+
+    <script>
+        /**
+         * ฟังก์ชันดึงเนื้อหาจากไฟล์รายสัปดาห์ตามค่า id ใน URL
+         * เช่น read.html?id=20260118
+         */
+function loadSermonDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const sermonId = params.get('id');
+  const contentArea = document.getElementById('sermon-full-content');
+
+  if (!sermonId) {
+    contentArea.innerHTML = '<p style="text-align:center;">ไม่พบรหัสคำเทศนา</p>';
+    return;
+  }
+
+  fetch(`/sermon/${sermonId}.html`)
+    .then(res => {
+      if (!res.ok) throw new Error('ไม่พบไฟล์');
+      return res.text();
+    })
+    .then(html => {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+
+      const main = temp.querySelector('main');
+      if (!main) throw new Error('โครงสร้างไม่ถูกต้อง');
+
+      contentArea.innerHTML = '';
+      contentArea.appendChild(main);
+
+      const h1 = main.querySelector('h1');
+      if (h1) {
+        document.title = `${h1.innerText} | JDM Bangkok`;
+      }
+    })
+    .catch(() => {
+      contentArea.innerHTML =
+        '<p style="text-align:center;">ยังไม่มีเนื้อหาคำเทศนาสำหรับสัปดาห์นี้</p>';
+    });
+}
+
+document.addEventListener('allIncludesLoaded', loadSermonDetail);
+
+    </script>
+
+</body>
+</html>

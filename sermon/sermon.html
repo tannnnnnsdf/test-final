@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คลังคำเทศนา | คริสตจักรสาวกพระเยซูกรุงเทพ</title>
+    <!-- เรียกใช้ Variables และ Style หลัก -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    
+    <style>
+        .sermon-page-header { background: var(--bg-alt); padding: var(--space-xl) 20px; text-align: center; }
+        .sermon-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 30px; 
+            max-width: var(--container-width); 
+            margin: -40px auto var(--space-xl); 
+            padding: 0 20px; 
+        }
+        .sermon-card { 
+            background: var(--white); 
+            border-radius: var(--radius-md); 
+            overflow: hidden; 
+            box-shadow: var(--shadow-md); 
+            transition: var(--transition-normal);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .sermon-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+        
+        /* ส่วนรูปปก YouTube */
+        .card-thumb { 
+            width: 100%; 
+            aspect-ratio: 16 / 9; 
+            background: #000; 
+            overflow: hidden;
+            position: relative;
+        }
+        .card-thumb img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.5s;
+        }
+        .sermon-card:hover .card-thumb img { scale: 1.1; opacity: 0.8; }
+
+        .card-body { padding: var(--space-md); flex-grow: 1; display: flex; flex-direction: column; }
+        .card-date { color: var(--primary-color); font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
+        .card-title { font-size: 1.25rem; color: var(--text-main); line-height: 1.4; margin-bottom: 15px; }
+        
+        .btn-read-sermon { 
+            margin-top: auto;
+            padding: 10px 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition-fast);
+        }
+        .btn-read-sermon:hover { background: var(--primary-light); }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Include Header -->
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <section class="sermon-page-header">
+            <div class="container">
+                <h1>คลังคำเทศนาพระวจนะ</h1>
+                <p>รับฟังและอ่านบทสรุปคำเทศนาเพื่อการเติบโตในความเชื่อ</p>
+            </div>
+        </section>
+
+        <!-- รายการคำเทศนา (Sermon Cards) -->
+        <div class="sermon-grid" id="sermon-container">
+            
+            <!-- สัปดาห์ที่ 1 -->
+            <article class="sermon-card" data-sermon-id="sermon-worship-2026-01-18">
+  <div class="card-thumb">
+    <img
+      src="https://img.youtube.com/vi/PSeplYSmOjk/maxresdefault.jpg"
+      alt="การดำเนินชีวิตในพระสิริ"
+      loading="lazy">
+  </div>
+
+  <div class="card-body">
+    <div class="card-date">18 มกราคม 2026</div>
+    <h3 class="card-title">การดำเนินชีวิตในพระสิริ</h3>
+    <a href="/sermon/read.html?id=20260125"
+       class="btn-read-sermon">
+       อ่านเนื้อหา & ชมวิดีโอ
+    </a>
+  </div>
+</article>
+
+
+            <!-- สัปดาห์ที่ 2 -->
+            <article class="sermon-card" data-sermon-id="sermon-worship-2026-01-18">
+  <div class="card-thumb">
+    <img
+      src="https://img.youtube.com/vi/PSeplYSmOjk/maxresdefault.jpg"
+      alt="การดำเนินชีวิตในพระสิริ"
+      loading="lazy">
+  </div>
+
+  <div class="card-body">
+    <div class="card-date">18 มกราคม 2026</div>
+    <h3 class="card-title">การดำเนินชีวิตในพระสิริ</h3>
+    <a href="/sermon/read.html?id=20260118"
+       class="btn-read-sermon">
+       อ่านเนื้อหา & ชมวิดีโอ
+    </a>
+  </div>
+</article>
+
+<article class="sermon-card" data-sermon-id="sermon-worship-2026-01-18">
+  <div class="card-thumb">
+    <img
+      src="https://img.youtube.com/vi/PSeplYSmOjk/maxresdefault.jpg"
+      alt="การดำเนินชีวิตในพระสิริ"
+      loading="lazy">
+  </div>
+
+  <div class="card-body">
+    <div class="card-date">18 มกราคม 2026</div>
+    <h3 class="card-title">การดำเนินชีวิตในพระสิริ</h3>
+    <a href="/sermon/read.html?id=20260111"
+       class="btn-read-sermon">
+       อ่านเนื้อหา & ชมวิดีโอ
+    </a>
+  </div>
+</article>
+
+
+        </div>
+    </main>
+
+    <!-- ✅ Include Footer -->
+    <div data-include="components/footer.html"></div>
+
+    <!-- ✅ สคริปต์ควบคุมการทำงาน -->
+    <script src="js/header-logic.js"></script>
+    <script src="/inciude.js"></script>
+
+    <script>
+    /**
+     * ฟังก์ชันดึง ID วิดีโอจากไฟล์สัปดาห์มาใส่เป็นรูปปกอัตโนมัติ
+     */
+    document.addEventListener('allIncludesLoaded', () => {
+        const cards = document.querySelectorAll('.sermon-card');
+
+        cards.forEach(card => {
+            const id = card.getAttribute('data-sermon-id');
+            const imgElement = document.getElementById(`img-${id}`);
+
+            if (id && imgElement) {
+                fetch(`sermon/${id}.html`)
+                    .then(res => res.text())
+                    .then(html => {
+                        // ใช้ Regex ค้นหา ID วิดีโอจากแท็ก iframe
+                        const match = html.match(/embed\/([^?|"]+)/);
+                        if (match && match[1]) {
+                            const videoId = match[1];
+                            // ดึงรูปปกขนาดใหญ่จาก YouTube
+                            imgElement.src = `https://img.youtube.com{videoId}/maxresdefault.jpg`;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(`Error loading sermon ${id}:`, err);
+                        // ถ้าโหลดไม่สำเร็จ ให้ใช้รูป Placeholder
+                        imgElement.src = 'https://images.unsplash.com';
+                    });
+            }
+        });
+    });
+    </script>
+</body>
+</html>

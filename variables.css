@@ -1,0 +1,63 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
+/* ---------- Light (default) ---------- */
+:root {
+  /* Brand */
+  --gold-1: #daa520;
+  --gold-2: #b8860b;
+
+  /* Text */
+  --text-main: #2c3e50;
+  --text-muted: #7f8c8d;
+
+  /* Background */
+  --bg-main: rgba(255,255,255,.95);
+  --bg-panel: rgba(255,255,255,.98);
+  --bg-hover: rgba(218,165,32,.05);
+
+  /* Border */
+  --border-soft: rgba(218,165,32,.15);
+
+  /* Shadow */
+  --shadow-soft: 0 2px 20px rgba(0,0,0,.03);
+  --shadow-float: 0 10px 40px rgba(0,0,0,.1);
+
+  /* Motion */
+  --ease-spring: cubic-bezier(.68,-.55,.265,1.55);
+  --t-fast: .3s;
+  --t-med: .4s;
+}
+
+/* ---------- Auto Dark (ตาม OS) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-main: #ecf0f1;
+    --text-muted: #bdc3c7;
+
+    --bg-main: rgba(18,22,28,.95);
+    --bg-panel: rgba(24,28,35,.98);
+    --bg-hover: rgba(218,165,32,.12);
+
+    --border-soft: rgba(218,165,32,.25);
+
+    --shadow-soft: 0 2px 20px rgba(0,0,0,.4);
+    --shadow-float: 0 12px 45px rgba(0,0,0,.55);
+  }
+}
+
+/* ---------- Force Dark (manual toggle) ---------- */
+[data-theme="dark"] {
+  --text-main: #ecf0f1;
+  --text-muted: #bdc3c7;
+
+  --bg-main: rgba(18,22,28,.95);
+  --bg-panel: rgba(24,28,35,.98);
+  --bg-hover: rgba(218,165,32,.12);
+
+  --border-soft: rgba(218,165,32,.25);
+
+  --shadow-soft: 0 2px 20px rgba(0,0,0,.4);
+  --shadow-float: 0 12px 45px rgba(0,0,0,.55);
+}

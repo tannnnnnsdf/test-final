@@ -1,0 +1,419 @@
+<style>
+    /* Footer Styles */
+    
+    .footer {
+      position: relative;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: #ecf0f1;
+      padding: 60px 40px 30px;
+      border-top: 3px solid #daa520;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo-icon {
+      width: 150px;
+      height: 150px;
+      filter: drop-shadow(0 2px 8px rgba(218, 165, 32, 0.3));
+    }
+
+    .footer-logo-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #bdc3c7;
+      max-width: 250px;
+    }
+
+    .footer-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #daa520;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links li {
+      font-size: 14px;
+      color: #bdc3c7;
+      line-height: 1.6;
+    }
+
+    .footer-links a {
+      color: #bdc3c7;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #daa520, #b8860b);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #daa520;
+      padding-left: 5px;
+    }
+
+    .footer-links a:hover::before {
+      width: 100%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 5px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: #ecf0f1;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #daa520, #b8860b);
+      border-color: #daa520;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+    }
+
+    .social-link:active {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, #daa520, #b8860b);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      font-size: 14px;
+      color: #95a5a6;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .footer-bottom-links a {
+      color: #95a5a6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #daa520;
+    }
+
+    .footer-bottom-links span {
+      color: #7f8c8d;
+    }
+
+    /* Footer Responsive */
+    @media (max-width: 968px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        padding: 50px 30px 25px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-section {
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-logo {
+        justify-content: center;
+      }
+
+      .footer-description {
+        max-width: 100%;
+      }
+
+      .footer-links {
+        align-items: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer {
+        padding: 40px 20px 20px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-title {
+        font-size: 16px;
+      }
+
+      .footer-links li,
+      .footer-description,
+      .footer-bottom p,
+      .footer-bottom-links {
+        font-size: 13px;
+      }
+
+      .social-link {
+        width: 48px;
+        height: 48px;
+        margin: 4px;
+      }
+
+      .social-link svg {
+        width: 20px;
+        height: 20px;
+      }
+}
+   .social-icon {
+  width: 20px;
+  height: 20px;
+   }
+
+   .cookie-consent {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 720px;
+  width: calc(100% - 40px);
+  background: rgba(44, 62, 80, 0.95);
+  color: #ecf0f1;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  z-index: 2000;
+  font-size: 14px;
+}
+
+.cookie-consent p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-link {
+  color: #daa520;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.cookie-link:hover {
+  text-decoration: underline;
+}
+
+.cookie-consent button {
+  background: linear-gradient(135deg, #daa520, #b8860b);
+  border: none;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cookie-consent button:hover {
+  filter: brightness(1.1);
+}
+
+@media (max-width: 600px) {
+  .cookie-consent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.cookie-consent,
+.cookie-consent * {
+  pointer-events: auto !important;
+}
+
+</style>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+     <div class="footer-section">
+      <div class="footer-logo">
+        <img src="https://www.tannatthaphon.online/assets/images/faicon.svg" class="footer-logo-icon" alt="โลโก้คริสตจักรสาวกพระเยซูกรุงเทพ">
+        </div><div footer-logo ><span class="footer-logo-text">
+            คริสตจักรสาวกพระเยซูกรุงเทพ
+        </span>
+      </div>
+      <p class="footer-description">
+คริสตจักรที่มุ่งสร้างสาวกของพระเยซูคริสต์
+เพื่อประกาศข่าวประเสริฐและรับใช้สังคมด้วยความรัก
+</p>
+
+     </div>
+     <div class="footer-section">
+        <h3 class="footer-title">ติดต่อเรา</h3>
+        <ul class="footer-links">
+            <li><span aria-hidden="true">📍</span> 64 ซอยรามคำแหง 24 แยก 6<br>แขวงหัวหมาก เขตบางกะปิ<br>จังหวัดกรุงเทพมหานคร 10240</li>
+            <li><span aria-hidden="true">📞</span> 02-123-4567</li>
+            <li><span aria-hidden="true">✉️</span> info@gracechurch.th</li>
+            <li><span aria-hidden="true">🕐</span> อาทิตย์ 10:00 - 12:00 น.</li>
+        </ul>
+     </div>
+     <div class="footer-section">
+        <h3 class="footer-title">ลิงก์ด่วน</h3>
+        <ul class="footer-links">
+            <li><a href="#about">เกี่ยวกับเรา</a></li>
+            <li><a href="#services">การนมัสการ</a></li>
+            <li><a href="#ministries">พันธกิจ</a></li>
+            <li><a href="#events">กิจกรรม</a></li>
+        </ul>
+     </div>
+     <div class="footer-section">
+        <h3 class="footer-title">ติดตามเรา</h3>
+        <div class="social-links">
+
+  <a href="#facebook" class="social-link" aria-label="Facebook">
+    <img class="social-icon" src="/2021_Facebook_icon.svg" alt="logo-facebook">
+  </a>
+
+  <a href="#youtube" class="social-link" aria-label="YouTube">
+    <img class="social-icon" src="/YouTube_social_red_circle_(2024).svg" alt="logo-youtube">
+  </a>
+
+  <a href="#instagram" class="social-link" aria-label="Instagram">
+    <img class="social-icon" src="/Instagram_logo_2022.svg" alt="logo-instragram" >
+  </a>
+
+  <a href="#line" class="social-link" aria-label="Line">
+    <img class="social-icon" src="/LINE_logo.svg" alt="logo-line">
+  </a>
+
+</div>
+
+     </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© </span>2026 คริสตจักรสาวกพระเยซูกรุงเทพ
+</p>
+        <div class="footer-bottom-links">
+            <a href="#privacy">นโยบายความเป็นส่วนตัว</a>
+            <span>•</span>
+            <a href="#terms">ข้อกำหนดการใช้งาน</a>
+        </div>
+    </div>
+    <div class="cookie-consent" id="cookieConsent" aria-live="polite">
+  <p>
+    เว็บไซต์นี้ใช้คุกกี้เพื่อปรับปรุงประสบการณ์การใช้งานของคุณ
+    โดยการใช้งานเว็บไซต์นี้ต่อ ถือว่าคุณยอมรับการใช้คุกกี้
+  </p>
+  <div class="cookie-actions">
+    <a href="#privacy" class="cookie-link">อ่านนโยบาย</a>
+    <button id="acceptCookies">ยอมรับ</button>
+  </div>
+</div>
+
+</footer>
+<script>
+   
+</script>
